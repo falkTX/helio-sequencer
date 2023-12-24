@@ -175,9 +175,9 @@ void ProjectMapsScroller::mouseDown(const MouseEvent &event)
     if (!event.source.isTouch() && event.mods.isLeftButtonDown())
     {
         const auto mapBounds = this->getMapBounds();
-        this->drawingNewScreenRange = {
+        this->drawingNewScreenRange = juce::Rectangle<float>{
             (event.position.x - mapBounds.getX()) / float(mapBounds.getWidth()),
-            (event.position.y - mapBounds.getY()) / float(mapBounds.getHeight()), 0, 0 };
+            (event.position.y - mapBounds.getY()) / float(mapBounds.getHeight()), 0.f, 0.f };
 
         this->repaint();
     }

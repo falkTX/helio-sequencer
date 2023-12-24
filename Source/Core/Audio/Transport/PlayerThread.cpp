@@ -36,7 +36,7 @@ void PlayerThread::startPlayback(Transport::PlaybackContext::Ptr context)
 {
     this->context = context;
     this->sequences = this->transport.getPlaybackCache();
-    this->startThread(10);
+    this->startThread(Thread::Priority::highest);
 }
 
 void PlayerThread::run()

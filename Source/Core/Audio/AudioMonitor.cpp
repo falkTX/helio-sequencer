@@ -74,8 +74,10 @@ void AudioMonitor::audioDeviceAboutToStart(AudioIODevice *device)
     this->sampleRate = device->getCurrentSampleRate();
 }
 
-void AudioMonitor::audioDeviceIOCallback(const float **inputChannelData, int numInputChannels,
-    float **outputChannelData, int numOutputChannels, int numSamples)
+void AudioMonitor::audioDeviceIOCallbackWithContext(const float* const* const inputChannelData,
+    const int numInputChannels, float* const* const outputChannelData,
+    const int numOutputChannels, const int numSamples,
+    const AudioIODeviceCallbackContext&)
 {
     const int minNumChannels = jmin(AudioMonitor::numChannels, numOutputChannels);
     

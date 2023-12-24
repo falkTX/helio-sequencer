@@ -288,7 +288,7 @@ void KeySignatureDialog::handleCommandMessage(int commandId)
         }
 
         this->scalePreviewThread = make<ScalePreviewThread>(this->transport, move(scaleKeys));
-        this->scalePreviewThread->startThread(5);
+        this->scalePreviewThread->startThread(Thread::Priority::normal);
 
         this->playButton->setPlaying(true);
     }

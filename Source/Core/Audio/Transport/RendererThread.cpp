@@ -95,7 +95,7 @@ bool RendererThread::startRendering(const URL &target, RenderFormat format,
         if (writer != nullptr)
         {
             DBG(this->renderTarget.getLocalFile().getFullPathName());
-            this->startThread(9);
+            this->startThread(Thread::Priority::highest);
         }
 
         return true;

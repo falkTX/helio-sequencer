@@ -816,9 +816,10 @@ void Instrument::AudioCallback::setProcessor(AudioProcessor *const newOne)
     }
 }
 
-void Instrument::AudioCallback::audioDeviceIOCallback(const float** const inputChannelData,
-    const int numInputChannels, float **const outputChannelData,
-    const int numOutputChannels, const int numSamples)
+void Instrument::AudioCallback::audioDeviceIOCallbackWithContext(const float* const* const inputChannelData,
+    const int numInputChannels, float* const* const outputChannelData,
+    const int numOutputChannels, const int numSamples,
+    const AudioIODeviceCallbackContext&)
 {
     jassert(this->sampleRate > 0 && this->blockSize > 0);
 

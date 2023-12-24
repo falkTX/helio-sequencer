@@ -30,7 +30,7 @@ public:
         Thread("SmoothZoom"),
         listener(parent)
     {
-        this->startThread(9);
+        this->startThread(Thread::Priority::high);
     }
 
     ~SmoothZoomController() override
