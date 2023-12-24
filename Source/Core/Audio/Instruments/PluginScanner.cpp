@@ -110,7 +110,7 @@ void PluginScanner::runInitialScan()
 
     if (!this->isThreadRunning())
     {
-        this->startThread(0);
+        this->startThread(Thread::Priority::background);
     }
 
     // prepare search paths, prepare specific files to scan,
@@ -159,7 +159,7 @@ void PluginScanner::scanFolderAndAddResults(const File &dir)
 
     if (!this->isThreadRunning())
     {
-        this->startThread(0);
+        this->startThread(Thread::Priority::background);
     }
 
     // prepare search paths and resume search thread

@@ -52,7 +52,8 @@ public:
         void setProcessor(AudioProcessor *processor);
         MidiMessageCollector &getMidiMessageCollector() noexcept { return messageCollector; }
 
-        void audioDeviceIOCallback(const float **, int, float **, int, int) override;
+        void audioDeviceIOCallbackWithContext(const float* const*, int, float* const*, int, int,
+                                              const AudioIODeviceCallbackContext&) override;
         void audioDeviceAboutToStart(AudioIODevice *) override;
         void audioDeviceStopped() override;
         void handleIncomingMidiMessage(MidiInput *, const MidiMessage&) override;

@@ -31,7 +31,7 @@ WaveformAudioMonitorComponent::WaveformAudioMonitorComponent(WeakReference<Audio
 
     if (this->audioMonitor != nullptr)
     {
-        this->startThread(6);
+        this->startThread(Thread::Priority::high);
     }
 }
 
@@ -45,7 +45,7 @@ void WaveformAudioMonitorComponent::setTargetAnalyzer(WeakReference<AudioMonitor
     if (targetAnalyzer != nullptr)
     {
         this->audioMonitor = targetAnalyzer;
-        this->startThread(6);
+        this->startThread(Thread::Priority::high);
     }
 }
 

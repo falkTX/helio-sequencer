@@ -28,8 +28,8 @@ public:
     //===------------------------------------------------------------------===//
 
     void audioDeviceAboutToStart(AudioIODevice *device) override;
-    void audioDeviceIOCallback(const float **inputChannelData, int numInputChannels,
-        float **outputChannelData, int numOutputChannels, int numSamples) override;
+    void audioDeviceIOCallbackWithContext(const float* const*, int, float* const*, int, int,
+                                          const AudioIODeviceCallbackContext&) override;
     void audioDeviceStopped() override {}
     
     //===------------------------------------------------------------------===//
